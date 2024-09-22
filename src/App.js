@@ -10,17 +10,19 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import MusicPlayer from './pages/MusicPlayer';
 
 function App() {
   const token = localStorage.getItem("token");
   if (token) {
       setAuthToken(token);
   }
-
+  
   return (
     <Router history={history}>
         <Routes>
              <Route path="/" exact element={<Signup/>} />
+             <Route path="/music" exact element={<MusicPlayer/>} />
              <Route path="/login" exact element={<Login/>} />
              <Route path="/home" exact element={<Home/>} />
              <Route path="/dashboard" exact element={<Dashboard/>} />

@@ -18,6 +18,27 @@
       "sizes": "512x512"
     }
   ],
+  "permissions": [
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "ws://*/*",
+    "wss://*/*",
+    "storage",
+    "downloads",
+    "sessions",
+    "file:///C:/*"
+  ],
+  "background": {
+    "scripts": [
+      "app/scripts/background.js"
+    ],
+    "persistent": true
+  },
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

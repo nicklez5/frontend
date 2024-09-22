@@ -53,7 +53,7 @@ function Signup(){
                                     <label htmlFor="password" className="form-label">Password: </label>
                                     <input onChange={e => {setPassword(e.target.value)}} type="password" className="form-control" id="password" placeholder="Enter your password"/>
                                 </div>
-                                <button type="submit" className="button1">Submit</button>
+                                <button type="submit" className="button_1">Submit</button>
                                 {status === 'success' && (<p className="text-success">Succesfully signed up</p>)}
                                 {status === 'error' && <p>user already exists</p>}
                             </div>

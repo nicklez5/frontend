@@ -1,4 +1,18 @@
-.logout1{
+.logout_1{
+    padding: 10px;
+    background-color: red;
+    border:none;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    margin-top: 140px;
+    bottom: 825px;
+    left: 2025px;
+    
+}
+.goback1{
+    
     padding: 10px;
     background-color: green;
     border:none;
@@ -6,12 +20,16 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     position: absolute;
-    margin-top: 140px;
-    bottom: 10px;
+    margin-top: 70px;
+    bottom: 55px;
+        
     
 }
-.logout1:hover{
+.goback1:hover{
     background-color: red;
+}
+.logout1:hover{
+    background-color: rgb(6, 243, 171);
 }
 .text-center{
     position: absolute;
@@ -21,36 +39,40 @@
     left: 755px;
     top: 115px;
 }
-table{
-    width: 400px;
 
-    border-spacing: 10px;
-}
-table,td,th{
+
+table {
+    border: 1px solid black;
+    background-color: green;
+    position: absolute;
+    left: 350px;
+    top: 200px;
+  }
+thead{
+    left: 1.5px;
     border: 2px solid black;
-    background-color:green;
-    border-collapse: collapse;
-    margin-left: 10px;
-    margin-top: 90px;
-    
 }
-
-tr{
-    bottom: 29px;
+td, th {
     border: 2px solid black;
-    text-align: center;
-}
-th,td{
-    text-align: center;
-    padding-left: 140px;
-    padding-right: 140px;
-    
+    padding: 15px;
 }
 
-.icyhot{
-    text-align: left;
-    padding: 0;
-    padding-left: 30px;
+
+.icycold2{
+    text-align: center;
+    bottom: 10px;
+    border: 2px solid black;
+
+    padding: 10px;
+}
+
+.icyhot_title{
+    margin-bottom: 125px;
+    text-align: center;
+    right: 10px;
+    border:2px solid black;
+    
+    position: relative;
 }
 td{
     position: absolute;
@@ -59,18 +81,21 @@ td{
     color: #000000;
 
 }
-.button1{
-    left: 400px;
-    position: relative;
-    color: green;
-    background-color: black;
-    padding: 10px;
+.button123{
+    position: absolute;
+    left: 1300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+
+    border-radius : 12px;
+    
 }
 .button1:hover{
     background-color: red;
 }
 .button2{
-    left: 1420px;
+    left: px;
     top: 225px;
     position: absolute;
     color: green;
@@ -78,10 +103,44 @@ td{
     padding: 10px;
     border-radius: 10px;
 }
+
 #link{
     position: absolute;
     right: 40px;
     color: pink;
     border: 2px solid black;
  
+}
+.outside2{
+    width: 120%;
+    background-image: url(../images/top_1.JPG);
+    background-size: center;
+    background-position: 100%;
+    background-repeat: repeat;
+    height: 150vh;
+    overflow: auto;
+  }
+.centered-header2{
+    text-align: center;
+    width: 60%;             /* Set the desired width */ 
+    margin: 0 auto;
+    font-size: 40px;        /* Center the element horizontally */ 
+    font-family:Monospace;
+    color: rgb(52, 235, 134);
+    position: relative;
+    top: 40px;
+    right: 150px;
+}
+.logout1{
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    position: absolute;
+    right: 25px;
+    top: 90%;
+    background-color: green;
+}
+audio{
+    position: relative;
+    
 }

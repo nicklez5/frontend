@@ -75,7 +75,7 @@ export default function Login() {
                     placeholder="Enter password"
                     />
                 </div>
-                <button type="submit" className="button2">Log in</button>
+                <button type="submit" className="button_3">Log in</button>
           </div>
         </form>
         
