@@ -1,58 +1,99 @@
 import axios from "axios"
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, MouseEvent, setState} from 'react'
 import { Link } from "react-router-dom";
 import "./../css/dashboard.css"
-import Song from "../components/Song";
+import Button from "../Buttons/Button";
 import SongService from "../services/SongService";
-import UserService from "../services/UserService";
-import { jwtDecode} from 'jwt-decode'
-import ReactPlayer from 'react-player/lazy'
-import fileDownload from 'js-file-download';
-import  base64ToArrayBuffer from './MusicPlayer'
+import PlaylistService from "../services/PlaylistService";
+import deleteSong from "../components/Functions";
 export default class Dashboard extends React.Component{
     constructor(){
         super();
         this.state = {
-            email: 'jackson2k23@yahoo.com',
-            songs: []
-        
+            email: localStorage.getItem('email'),
+            songs: [],
+            filename: ''
+            
         }
         
-    }
-        
-    componentDidMount(){
         axios.get(`http://localhost:8000/songs/all`,
-        {
-            params: {email: this.state.email },
-            headers: { 
-                'Content-Type': "application/json"
-            }
-        })
-        .then((response => {
-            console.log(response)
+            {
+                params: {email: this.state.email },
+                headers: { 
+                    'Content-Type': "application/json"
+                }
+            })
+            .then((response => {
+                console.log(response.data)
+                for(let i = 0; i < response.data.length ; i++){
+                    this.state.songs.push(response.data[i]);
+                    
+                }
+                for(let i = 0 ; i < response.data.length; i++){
+                    //console.log("NOT ENCODED " + response.data[i].fileDownloadUri)
+                    const encoded = encodeURI(response.data[i].fileDownloadUri)
+                    //console.log("ENCODED " + encoded)
+                    this.state.songs[i].fileDownloadUri = encoded;
+                        
+                }
+                this.setState({
+                    songs: this.state.songs
+                })
+                console.log(this.state.songs)
         }))
+        
+    }
+    componentDidMount(){
+        
+        
     }
     
     
     download = (data) => {
-        axios.get(`http://localhost:8000/songs/downloadFile`,
+        axios.get(`http://localhost:8000/songs/download/` + data.fileDownloadUri,
         {
-            params: {filename: data.filename},
             headers: {
                 'Content-Type': "audio/mp3"
             }
         })
         .then((response => {
             console.log(response.request.responseURL)
-            //console.log(response)
+            console.log(response)
             window.location.href = response.request.responseURL
         }))}
     
-    
-    handleClick(){
+     addToPlaylist = (song) => {
+        try{
+            PlaylistService.addSongToPlaylist(song, this.state.email)
+            .then((resp) => {
+                console.log(resp)
+            })
+        }catch{
+            console.log("Failed");
+        }
+     }
+     handleClick = (element) => {
+        try{
+            deleteSong(element);
+            window.location.reload();
+        }catch{
+            console.log("Failed")
+            window.location.reload();
+        }
         
-        window.location.wref = '/'
+       
     }
+    logout = () => {
+        localStorage.clear()
+        
+        window.location.href = '/'
+    }
+
+        
+    
+        
+       // window.location.href = '/'
+    
     
    
        
@@ -63,10 +104,10 @@ export default class Dashboard extends React.Component{
         return (
             <div className="outside2">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#news">Library</a></li>
-                    <li><a href="#contact">Playlists</a></li>
-                    <li><a href="#about">Settings</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dashboard">Library</a></li>
+                    <li><a href="/playlists">Playlists</a></li>
+                    <li><a href="/settings">Settings</a></li>
                 </ul>
                 <div>
                     <header className="centered-header2">
@@ -81,30 +122,36 @@ export default class Dashboard extends React.Component{
                             <th>title</th>
                             <th>artist</th>
                             <th>Filename</th>
-                            <th>Features</th>
+                            <th>Links</th>
                             <th>Song</th>
+                            <th>Buttons</th>
                         </tr>
                     </thead>
-                    <tbody className="Table">
-                        {this.state.songs.map(songs => (
-                                <tr key={songs.id}><th>{songs.id}</th>
-                                    <th className="icyhot">{songs.title}</th>
-                                    <th className="icyhot">{songs.artist}</th>
-                                    <th>mp3</th> 
-                                    <th className="icyhot"><a href={songs.url}>Link</a></th>    
-                                    <button className="button123" onClick={() => this.download(songs)}>Download</button>                          
+                    <tbody className="Table" id="Table2">
+                        {this.state.songs.map((songs,index) => (
+                                <tr className="123" key={songs.id} onClick={this.fetchSongDetails}><th>{songs.id}</th>
+                                    <th data-title="Title" className="icyhot">{songs.title}</th>
+                                    <th data-title="Artist" className="icyhot">{songs.artist}</th>
+                                    <th data-title="Filename">{songs.fileName}</th> 
+                                    <th data-title="FileDownloadUri" className="icyhot"><a className="link1" href={songs.fileDownloadUri}>Link</a></th>    
+                                    {/* <button className="button123" onClick={() => this.download(songs.fileDownloadUri)}>Download</button>                           */}
                                     <audio controls>
-                                        <source id="mySong" src={songs.url} type="audio/mp3" />
+                                        <source id="mySong" src={songs.fileDownloadUri} type="audio/mp3" />
                                     
                                     </audio>
+                                    
+                                    <th ><button className="buttonxyz" onClick={() => this.handleClick(songs.id)}>Delete Me</button> <button onClick={() => this.addToPlaylist(songs.id)} className="buttonxyz">Add to playlist</button>  </th>
+                                     
                                 </tr>
                         ))}
                         
                         
                     </tbody>
                 </table>
-                <Link className="logout1" href='/' >Logout</Link>
-                <button className="goback1">Go back</button>
+                <Link to="/addMusic" id="button321">Add a song</Link>
+        
+                <button to="/" onClick={() => this.logout()} className="button_forever">Log out</button>
+    
                 </div>
         )
     }

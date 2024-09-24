@@ -10,12 +10,11 @@
 .multi-bg-example {
     width: 100%;
     background-image: url(../images/top_2.jpg);
-    background-size: cover;
+    background-size:auto;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow: hidden;
-  
+    height: 120vh;
+    overflow: visible;
+    
 }
 
 ul {
@@ -23,7 +22,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: url(../images/background2.jpg);
     display: flex;
     flex-direction: row;
     gap: 150px;

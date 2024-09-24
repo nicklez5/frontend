@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const spotify_url = "http://localhost:8000/songs/"
-
+var email = localStorage.getItem('email');
 class SongService{
     info(id, email){
         const form = new FormData();

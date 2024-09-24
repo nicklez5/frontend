@@ -40,14 +40,14 @@ h2{
   font-family:'Courier New', Courier, monospace
 }
 #email{
-  margin-left: 20px;
+  margin-left: 30px;
   height: 10px;
   width: 76%;
 }
 #fullName{
-  height: 44%;
+  height: 15%;
   width: 76%;
-  margin-left: 16px;
+  margin-left: 25px;
   margin-top: 10px;
 }
 #password{
@@ -70,7 +70,6 @@ ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: url(../images/background2.jpg);
   display: flex;
   flex-direction: row;
   gap: 470px;
@@ -106,12 +105,13 @@ li a:hover {
 
 
 .outside{
-  width: 100%;
-  background-image: url(../images/top_2.jpg);
+  width: 120%;
+  position: relative;
+  background-image: url(../images/background2.jpg);
   background-size:auto;
-  background-position: 100%;
-  background-repeat: repeat;
-  height: 100vh;
-  overflow: hidden;
+  
+  background-repeat:repeat;
+  height: 120vh;
+  overflow: visible;
 }
 

@@ -11,6 +11,9 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import MusicPlayer from './pages/MusicPlayer';
+import AddMusic from './components/RegisterSong';
+import Playlist from './components/Playlists';
+import RenamePlaylist from './components/RenamePlaylist';
 
 function App() {
   const token = localStorage.getItem("token");
@@ -23,6 +26,9 @@ function App() {
         <Routes>
              <Route path="/" exact element={<Signup/>} />
              <Route path="/music" exact element={<MusicPlayer/>} />
+             <Route path="/addMusic" exact element={<AddMusic/>} />
+             <Route path="/renamePlaylist" exact element={<RenamePlaylist />} />
+             <Route path='/playlists' exact element={<Playlist />} />
              <Route path="/login" exact element={<Login/>} />
              <Route path="/home" exact element={<Home/>} />
              <Route path="/dashboard" exact element={<Dashboard/>} />

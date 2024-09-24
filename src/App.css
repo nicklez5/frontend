@@ -51,4 +51,105 @@
 }
 .outside{
 background-image: url(../src/images/background_1.jpg);
+height: 100%;
+padding-top: 10px;
+}
+.outside-123{
+  background-image: url(../src/images/top_4.jpg)
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: row;
+  gap: 470px;
+}
+li{
+  float: left;
+  border-right: 1px solid #81232369;
+}
+li a {
+    
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:solid;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(160, 232, 160);
+}
+
+li a:hover {
+  background-color: #12e1357a;
+}
+.active {
+  background-color: #81232369;
+}
+header{
+  font-size: 40px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 800px;
+  position: absolute;
+  top: 150px;
+  font-weight: bolder;
+  color: rgb(160, 232, 160);
+}
+.addMusicForm{
+  position: absolute;
+  left: 740px;
+  top: 230px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.addMusicForm h1{
+  position: relative;
+  margin-left: 10px;
+}
+.addMusicForm h1:hover{
+  background-color: rgb(206, 152, 139);
+}
+.addMusicForm div {
+  padding: 10px;
+  color:  rgb(0, 224, 249);
+  font-weight: bolder;
+  font-size: 20px;
+  border: 2px solid rgba(49, 34, 7, 0.128);
+  background-color:  #4caf50;
+  border-radius: 20px;
+
+}
+.addMusicForm label{
+  padding-right: 20px;
+}
+.addMusicForm input{
+  margin-right: 20px;
+  padding-right: 20px;
+
+}
+.addMusicForm button{
+
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 100px;
+  margin-top: 40px;
+
+}
+
+
+.outside3{
+  width: 100%;
+  background-image: url("../src/images/top_2.jpg");
+  background-size: center;
+  background-position: 100%;
+  background-repeat: repeat;
+  height: 150vh;
+  overflow: auto;
 }

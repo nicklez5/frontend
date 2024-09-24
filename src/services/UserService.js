@@ -30,7 +30,9 @@ class UserService{
     }
 
 
-    info(){
+    info(email){
+        const form = new FormData();
+        form.append("email",email)
         return axios.get(spotify_url + "info",{headers: {'Content-Type': 'multipart/form-data'}})
     }
     update(username,password,email){
