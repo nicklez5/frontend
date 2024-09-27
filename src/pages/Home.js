@@ -1,4 +1,4 @@
-import "./../css/header.css";
+
 import Signup from "./Signup"
 function HomePage() {
   return (

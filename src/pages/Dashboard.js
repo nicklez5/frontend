@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, {useState, useEffect, MouseEvent, setState} from 'react'
 import { Link } from "react-router-dom";
-import "./../css/dashboard.css"
+import s from "../css/dashboard.module.css"
 import Button from "../Buttons/Button";
 import SongService from "../services/SongService";
 import PlaylistService from "../services/PlaylistService";
@@ -63,29 +63,32 @@ export default class Dashboard extends React.Component{
         }))}
     
      addToPlaylist = (song) => {
+        console.log(song)
         try{
-            PlaylistService.addSongToPlaylist(song, this.state.email)
+            PlaylistService.addSongToPlaylist(song)
             .then((resp) => {
                 console.log(resp)
+            }).catch((err) => {
+                console.log(err)
             })
         }catch{
             console.log("Failed");
         }
      }
      handleClick = (element) => {
+        console.log(element)
         try{
             deleteSong(element);
             window.location.reload();
         }catch{
             console.log("Failed")
-            window.location.reload();
+            
         }
         
        
     }
     logout = () => {
         localStorage.clear()
-        
         window.location.href = '/'
     }
 
@@ -102,7 +105,7 @@ export default class Dashboard extends React.Component{
     render(){
         
         return (
-            <div className="outside2">
+            <div className={s.outside2}>
                 <ul>
                     <li><a href="/home">Home</a></li>
                     <li><a href="/dashboard">Library</a></li>
@@ -110,37 +113,36 @@ export default class Dashboard extends React.Component{
                     <li><a href="/settings">Settings</a></li>
                 </ul>
                 <div>
-                    <header className="centered-header2">
+                    <header className={s.centeredheader2}>
                         Welcome to Spotify
                     </header>
                 </div>
-                <h2 className="text-center">Song Details</h2>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
+                <table className={s.table_1}>
+                    <thead className={s.thead123}>
+                        <tr className={s.tablerows}>
                             <th>id</th>
                             <th>title</th>
                             <th>artist</th>
                             <th>Filename</th>
                             <th>Links</th>
                             <th>Song</th>
-                            <th>Buttons</th>
+                            <th>Functions</th>
                         </tr>
                     </thead>
-                    <tbody className="Table" id="Table2">
+                    <tbody className={s.Table2}>
                         {this.state.songs.map((songs,index) => (
-                                <tr className="123" key={songs.id} onClick={this.fetchSongDetails}><th>{songs.id}</th>
-                                    <th data-title="Title" className="icyhot">{songs.title}</th>
-                                    <th data-title="Artist" className="icyhot">{songs.artist}</th>
-                                    <th data-title="Filename">{songs.fileName}</th> 
-                                    <th data-title="FileDownloadUri" className="icyhot"><a className="link1" href={songs.fileDownloadUri}>Link</a></th>    
+                                <tr className="table-rows2" key={songs.id} onClick={this.fetchSongDetails}><th className={s.tablecolumns2}>{songs.id}</th>
+                                    <th data-title="Title" className={s.tablecolumns2}>{songs.title}</th>
+                                    <th data-title="Artist" className={s.tablecolumns2}>{songs.artist}</th>
+                                    <th data-title="Filename" className={s.tablecolumns2}>{songs.fileName}</th> 
+                                    <th data-title="FileDownloadUri" className={s.tablecolumns2}><a className={s.link1} href={songs.fileDownloadUri}>Download me</a></th>    
                                     {/* <button className="button123" onClick={() => this.download(songs.fileDownloadUri)}>Download</button>                           */}
                                     <audio controls>
-                                        <source id="mySong" src={songs.fileDownloadUri} type="audio/mp3" />
+                                        <source className={s.mySong} src={songs.fileDownloadUri} type="audio/mp3" />
                                     
                                     </audio>
                                     
-                                    <th ><button className="buttonxyz" onClick={() => this.handleClick(songs.id)}>Delete Me</button> <button onClick={() => this.addToPlaylist(songs.id)} className="buttonxyz">Add to playlist</button>  </th>
+                                    <th className={s.tablecolumns2}><button className="button-combo" onClick={() => this.handleClick(songs.id)}>Delete Me</button> <button className="button-combo" onClick={() => this.addToPlaylist(songs.id)}>Add to playlist</button>  </th>
                                      
                                 </tr>
                         ))}
@@ -148,9 +150,9 @@ export default class Dashboard extends React.Component{
                         
                     </tbody>
                 </table>
-                <Link to="/addMusic" id="button321">Add a song</Link>
+                <Link to="/addMusic" className={s.button321}>Add a song</Link>
         
-                <button to="/" onClick={() => this.logout()} className="button_forever">Log out</button>
+                <button to="/" onClick={() => this.logout()} className={s.buttonforever}>Log out</button>
     
                 </div>
         )

@@ -1,0 +1,106 @@
+.table{
+    background-color: black;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+.thead123{
+    display: relative;
+    padding-left: 20px;
+    margin-bottom: 160px;
+    color: rgb(245, 126, 0);
+    font-weight: lighter;
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.tablerow{
+    border: 2px solid orange;
+    
+}
+.tablecol{
+    border: 2px solid orange;
+    padding: 10px;
+}
+.tablexyz{
+    position: absolute;
+    left: 160px;
+    top: 150px;
+    color: green;
+    background-color: black;
+    border: 2px solid green;
+}
+
+.table2_col1{
+    position: absolute;
+
+}
+.button321{
+    background-color: rgb(245, 126, 0);
+    color: white;
+    padding: 15px;
+    position: relative;
+    font-size: 16px;
+    margin-left: 1490px;
+    top: 50px;
+    cursor: pointer;
+}
+.rename_playlist123{
+    position: absolute;
+    top: 80px;
+}
+.rename_submit{
+    position: absolute;
+    top: 25px;
+    right: 80px;
+}
+.table2rows{
+    padding: 20px;
+
+}
+.Table3{
+   background-color: rgb(4, 5, 4);
+   height: 100%;
+   background-position: center;
+   width: 100%;
+}
+.table2data{
+    padding: 10px;
+    color: orange;
+    background-color: black;
+    border: 2px solid orange;
+}
+.mySong{
+    border: 2px solid orange;
+    width:100%;
+    top: 20px;
+    background-color: black;
+
+}
+.playlistCruise{
+    position: relative;
+    color: rgb(239, 130, 5);
+    margin-left: 650px;
+    
+}
+.rename_playlist{
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+}
+.outside3{
+
+    background-image: url("../images/img_69.jpg");
+    background-size:cover;
+    height: 250vh;
+
+
+  }
+.dashboard321{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    color: red;
+    font-family: 'Courier New', 'Courier', 'monospace'
+
+}

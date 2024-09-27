@@ -1,0 +1,59 @@
+
+
+.goback{
+    display:flex;
+    flex-direction: row;
+    position:fixed;
+    left: 100px;
+    color: teal;
+    bottom: 100px;
+}
+.outside{
+    background-image: url("../images/background2.jpg");
+    
+}
+.playlistdiv{
+    flex:auto;
+    flex-direction: row;
+    margin-left: 750px;
+    margin-top: 250px;
+}
+.title123{
+    position: relative;
+    margin-left: 50px;
+    color: teal;
+    font-family:'Courier New', Courier, monospace;
+}
+.outside2{
+    width: 100%;
+    position: relative;
+    background-image: url(../images/background2.jpg);
+    background-size:auto;
+    background-repeat:repeat;
+    height:98.5vh;
+    overflow: visible;
+}
+
+.button123{
+    text-align: center;
+    background-color: orange;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 850px;
+}
+.text123{
+    flex: auto;
+    flex-direction:row;
+
+}
+.label123{
+    margin-left: 15px;
+    padding-right: 15px;
+    color: teal;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.textsuccess{
+    text-align: center;
+    color: green;
+}

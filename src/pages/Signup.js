@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import "./../css/signup.css"
+import s from "./../css/Signup.module.css"
 import { Link , redirect} from 'react-router-dom'
 import UserService from "../services/UserService";
 
@@ -25,42 +25,38 @@ function Signup(){
     
     return (
         
-                <div className="outside">
+                <div className={s.outside}>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#news">Library</a></li>
-                        <li><a href="#contact">Playlists</a></li>
-                        <li><a href="#about">Settings</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Library</a></li>
+                        <li><a href="/">Playlists</a></li>
+                        <li><a href="/">Settings</a></li>
                     </ul>
                     <div>
-                        <header className="centered-header">
+                        <header className={s.centeredHeader}>
                             Welcome to Spotify
                         </header>
                     </div>
-                    <div className="addUser">
-                        <form className="addUserForm" onSubmit={handleSignup} >
-                            <div className="inputGroup">
-                            <h2>Sign up</h2>
-                                <div className = "mb-3">
-                                    <label htmlFor="email" className="form-label">Email:</label>   
-                                    <input onChange={e => {setEmail(e.target.value)}} type="email" id="email" className="form-control" placeholder="Enter your email"/>
+                    <div className={s.addUser}>
+                        <form className={s.addUserForm} onSubmit={handleSignup} >
+                            <div className={s.inputGroup}>
+                            <h2 className={s.header_signup}>Sign up</h2>
+                                <div className = {s.header_div}>
+                                    <label htmlFor="email" className={s.header_div_email}>Email:</label>   
+                                    <input onChange={e => {setEmail(e.target.value)}} type="email" id="email" className={s.header_div_email_input} placeholder="Enter your email"/>
+                                    <label htmlFor="fullName" className={s.header_div_name} >Name: </label>
+                                    <input onChange={e => {setFullName(e.target.value)}} type="text" className={s.header_div_name_input} placeholder="Enter your name"/>
+                                    <label htmlFor="password" className={s.header_div_password}>Password: </label>
+                                    <input onChange={e => {setPassword(e.target.value)}} type="password" className={s.header_div_password_input} id="password" placeholder="Enter your password"/>
+                                    <button type="submit" className={s.button_1}>Submit</button>
+                                    {status === 'success' && (<p className={s.success}>Succesfully signed up</p>)}
+                                    {status === 'error' && <p className={s.failure}>user already exists</p>}
                                 </div>
-                                <div className = "mb-3">
-                                    <label htmlFor="fullName" className="form-label">Name: </label>
-                                    <input onChange={e => {setFullName(e.target.value)}} type="text" className="form-control" id="fullName" placeholder="Enter your name"/>
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="password" className="form-label">Password: </label>
-                                    <input onChange={e => {setPassword(e.target.value)}} type="password" className="form-control" id="password" placeholder="Enter your password"/>
-                                </div>
-                                <button type="submit" className="button_1">Submit</button>
-                                {status === 'success' && (<p className="text-success">Succesfully signed up</p>)}
-                                {status === 'error' && <p>user already exists</p>}
                             </div>
                         </form>
-                        <div className="login">
+                        <div className={s.login}>
                             <p>Already have an account ? </p>
-                            <Link to="/login" type="submit" id="login_button">
+                            <Link to="/login" type="submit" className={s.login_p}>
                                 Login
                             </Link>
                         </div>

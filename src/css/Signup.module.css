@@ -1,0 +1,188 @@
+.inputGroup{
+    position: relative;
+}
+.header_signup{
+    font-size: 40px;
+    color: rgb(52, 235, 134);
+    margin-right: 250px;
+    bottom: 250px;
+    left: 770px;
+    position: absolute;
+    
+}
+.header_div{
+    position: relative;
+    left: 550px;
+    background-color: rgb(99, 214, 101);
+    height: 20%;
+    width: 20%;
+    padding: 20px;
+    position: relative;
+    flex-direction: column;
+    margin-left: 110px;
+    margin-top: 225px;
+    border-radius: 20px;
+}
+.header_div_email{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.header_div_email_input{
+    margin-top: 5px;
+     padding: 10px;
+    width: 70%;
+}
+.header_div_name{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.header_div_name_input{
+    margin-top: 5px;
+    width: 70%;
+    padding: 10px;
+}
+.header_div_password{
+    margin-top: 10px;
+    margin-left: -15px;
+}
+.header_div_password_input{
+    margin-top: 5px;
+    padding: 10px;
+    width: 69.5%;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 470px;
+  }
+  li{
+    float: left;
+    border-right: 1px solid #81232369;
+  }
+  li a {
+      
+    display: block;
+    color: white;
+    text-align: center;
+  
+    padding: 14px 16px;
+    text-decoration:solid;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(21, 194, 247);
+  }
+  
+.centeredHeader{
+    text-align: center;
+    width: 60%;             /* Set the desired width */ 
+    margin: 0 auto;
+    font-size: 60px;        /* Center the element horizontally */ 
+    font-family:Monospace;
+    color: rgb(52, 235, 134);
+    position: relative;
+    top: 60px;
+
+  }
+  
+  
+  h2{
+    text-align: center;
+    font-size: 18px;
+    font-family:'Courier New', Courier, monospace
+  }
+  #email{
+    margin-left: 30px;
+    height: 10px;
+    width: 76%;
+  }
+  #fullName{
+    height: 15%;
+    width: 76%;
+    margin-left: 25px;
+    margin-top: 15px;
+  }
+  #password{
+    position: relative;
+    width: 390.5px;
+    margin-top: 15px;
+  }
+
+.button_1{
+    width: 25%;
+    margin-top: 25px;
+    margin-left: 35%;
+    padding: 10px 0px 10px 0px;
+    background-color:#48ff00f9;
+    border: none;
+    border-radius: 15px;
+  }
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 470px;
+}
+li{
+    float: left;
+    border-right: 1px solid #81232369;
+}
+li a {
+        
+    display: block;
+    color: white;
+    text-align: center;
+
+    padding: 14px 16px;
+    text-decoration:solid;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(32, 172, 243);
+}
+
+li a:hover {
+    background-color: #0b32f47a;
+}
+.active {
+    background-color: #81232369;
+}
+  
+
+.text-successes{
+    color: aqua;
+    padding-left: 180px;
+}
+.outside{
+    width: 100%;
+    background-image: url("../images/top_2.jpg");
+    background-size: center;
+    background-position: 100%;
+    background-repeat: repeat;
+    height: 100vh;
+}
+.login{
+    color: aqua;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+
+}
+.login_p{
+    color: aqua;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+.success{
+    text-align: center;
+    color: green;
+}
+.failure{
+    text-align: center;
+    color: red;
+}

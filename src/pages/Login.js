@@ -1,4 +1,4 @@
-import '../css/login.css';
+import s from "../css/login.module.css";
 import { useState } from 'react';
 import { Link , redirect } from 'react-router-dom'
 import UserService from '../services/UserService';
@@ -40,48 +40,49 @@ export default function Login() {
 
   return (
      
-        <div className="outside">
+        <div className={s.outside}>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">Library</a></li>
-            <li><a href="#contact">Playlists</a></li>
-            <li><a href="#about">Settings</a></li>
+            <li className={s.li}><a href="/">Home</a></li>
+            <li><a href="/">Library</a></li>
+            <li><a href="/">Playlists</a></li>
+            <li><a href="/">Settings</a></li>
         </ul>
         <div>
-            <header className="centered-header">
+            <header className={s.centeredheader}>
                 Welcome to Spotify
             </header>
         </div>
+        <div>
+        <h1 className={s.login_id}>Login</h1>
+        <form className={s.LoginUser} onSubmit={handleLogin}>
+          
+          <div className={s.inputGroup2} >
         
-        <form className="loginUser" onSubmit={handleLogin}>
-          <div className="inputGroup" >
-                <p>Login</p>
-                <div className="mb-3">
-                  <label className="email" htmlFor="email">Email:</label>
+                <div className={s.inputFormdiv}>
+                  <label className={s.email} htmlFor="email">Email:</label>
                   <input
                     htmlFor="email"
                     type="email"
                     onChange={e => {setEmail(e.target.value)}}
                     placeholder="Enter email"
-                    id="email2"/>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password">Password:</label>
+                    className={s.email2}/>
+                  <label className={s.password} htmlFor="password">Password:</label>
                   <input 
                     htmlFor="password"
                     onChange={e => {setPassword(e.target.value)}} 
                     type="password" 
-                    id="password2" 
+                    className={s.password2}
                     placeholder="Enter password"
                     />
+                    <button type="submit" className={s.button321_0}>Log in</button>
                 </div>
-                <button type="submit" id="button321_0">Log in</button>
+
           </div>
         </form>
-        
+        </div>
         
      
-        <Link className="go_back"to="/">Go back</Link>
+        <Link className={s.go_back} to="/">Go back</Link>
         </div>
        
     

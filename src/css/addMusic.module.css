@@ -1,0 +1,51 @@
+.background123{
+    background: url(../images/top_2.jpg);
+    overflow: hidden;
+}
+.text-success{
+    position: absolute;
+    right: 140px;
+}
+.outside{
+    background: url(../images/top_2.jpg);
+    height:1400%;
+}
+.addMusicForm{
+    height: 140vh;
+    
+}
+.title{
+    position: relative;
+    text-align: center;
+    margin-top: 160px;
+    font-family:'Courier New', Courier, monospace;
+}
+.artist{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+.file{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 100px;
+    font-family:'Courier New', Courier, monospace;
+}
+.button1{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 840px;
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px;
+}
+.textsuccess{
+    position: relative;
+    text-align: center;
+    color: green;
+    font-weight: 900;
+    font-family:'Courier New', Courier, monospace;
+}
