@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom"
 import SongService from '../services/SongService';
 import s from '../css/addMusic.module.css';
 export default function AddMusic(){
@@ -23,18 +24,17 @@ export default function AddMusic(){
     return (
         <div className={s.outside}>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Library</a></li>
-                <li><a href="/playlists">Playlists</a></li>
-                <li><a href="/about">Settings</a></li>
+                <li className={s.li123_}><a className={s.li123_a} href="/">Home</a></li>
+                <li className={s.li123_}><a className={s.li123_a} href="/dashboard">Library</a></li>
+                <li className={s.li123_}><a className={s.li123_a} href="/playlists">Playlists</a></li>
+                <li className={s.li123_}><a className={s.li123_a} href="/about">Settings</a></li>
             </ul>
             
-                <header>Add a song</header>
-           
+                <header className={s.header1}>Add a song</header>
+            <Link to="/dashboard" className={s.goback}>Go back?</Link>
             <div className={s.background123}>
                 <form className={s.addMusicForm} onSubmit={handleMusic}>
                     <div className={s.title}>
-                        <h1>Music</h1>
                         <label htmlFor="title">Title:</label>
                         <input onChange={e => {setTitle(e.target.value)}} type="title" placeholder="Enter your title"/> 
                     </div>

@@ -12,7 +12,7 @@ export default function Random() {
     };
 
     axios
-      .post('http://localhost:8000/login', loginPayload)
+      .post('http://localhost:5050/login', loginPayload)
       .then((response) => {
         //get token from response
         const token = response.data.token;

@@ -15,8 +15,7 @@ export default class Dashboard extends React.Component{
             filename: ''
             
         }
-        
-        axios.get(`http://localhost:8000/songs/all`,
+        axios.get(`${process.env.REACT_APP_API_URL}/songs/all`,
             {
                 params: {email: this.state.email },
                 headers: { 
@@ -50,7 +49,8 @@ export default class Dashboard extends React.Component{
     
     
     download = (data) => {
-        axios.get(`http://localhost:8000/songs/download/` + data.fileDownloadUri,
+        
+        axios.get(`${process.env.REACT_APP_API_URL}/songs/download/` + data.fileDownloadUri,
         {
             headers: {
                 'Content-Type': "audio/mp3"
@@ -107,10 +107,10 @@ export default class Dashboard extends React.Component{
         return (
             <div className={s.outside2}>
                 <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/dashboard">Library</a></li>
-                    <li><a href="/playlists">Playlists</a></li>
-                    <li><a href="/settings">Settings</a></li>
+                    <li className={s.li123_}><a className={s.li123_a} href="/home">Home</a></li>
+                    <li className={s.li123_}><a className={s.li123_a} href="/dashboard">Library</a></li>
+                    <li className={s.li123_}><a className={s.li123_a} href="/playlists">Playlists</a></li>
+                    <li className={s.li123_}><a className={s.li123_a} href="/settings">Settings</a></li>
                 </ul>
                 <div>
                     <header className={s.centeredheader2}>
